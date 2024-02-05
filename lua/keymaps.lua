@@ -7,6 +7,8 @@ local opts = {
 -----------------
 -- Normal mode --
 -----------------
+-- nvim-tree
+vim.keymap.set('n', 'mm', ':NvimTreeToggle<CR>', opts)
 
 -- Hint: see `:h vim.map.set()`
 -- Better window navigation
@@ -29,6 +31,7 @@ vim.keymap.set('n', 'H', '<HOME>', opts)
 vim.keymap.set('n', 'L', '<END>', opts)
 vim.keymap.set('n', 'S', ':w<CR>', opts)
 vim.keymap.set('n', 'Q', ':q<CR>', opts)
+vim.keymap.set('n', 'QQ', ':q!<CR>', opts)
 
 -----------------
 -- Visual mode --
@@ -37,6 +40,8 @@ vim.keymap.set('n', 'Q', ':q<CR>', opts)
 -- Hint: start visual mode with the same area as the previous area and the same mode
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
+vim.keymap.set('v', 'jk', '<Esc>', opts)
+vim.keymap.set('v', 'JK', '<Esc>', opts)
 
 -----------------
 -- Insert mode --

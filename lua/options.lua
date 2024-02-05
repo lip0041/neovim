@@ -3,6 +3,14 @@ vim.opt.clipboard = 'unnamedplus' -- use system clipborad
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.mouse = 'a' -- allow the mouse to be used in Nvim
 
+-- nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- UTF-8
+vim.g.encoding = 'UTF-8'
+vim.o.fileencoding = 'utf-8'
+
 -- Tab
 vim.opt.tabstop = 4 -- number of visual spaces per TAB
 vim.opt.softtabstop = 4 -- number of spacesin tab when editing
@@ -17,11 +25,22 @@ vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
 -- vim.opt.termguicolors = true        -- enable 24-bit RGB color in the TUI
 vim.opt.showmode = true -- we are experienced, wo don't need the "-- INSERT --" mode hint
+vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn = '120'
+vim.opt.list = true
+-- vim.opt.listchars = 'space:·'
+vim.opt.showtabline = 2
 
 -- Searching
 vim.opt.incsearch = true -- search as characters are entered
-vim.opt.hlsearch = true -- do not highlight matches
+vim.opt.hlsearch = false -- do not highlight matches
 vim.opt.ignorecase = true -- ignore case in searches by default
 vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
 
+vim.opt.cmdheight = 2
+vim.opt.updatetime = 300
+vim.opt.timeoutlen = 300
 
+-- Split Window
+vim.opt.splitbelow = true
+vim.opt.splitright = true

@@ -62,6 +62,32 @@ return require('packer').startup(function(use)
         use { 'L3MON4D3/LuaSnip' }
         use { 'saadparwaiz1/cmp_luasnip', after = { 'nvim-cmp', 'LuaSnip' } }
 
+        -- File Browser
+        use {
+            'kyazdani42/nvim-tree.lua',
+            requires = {
+                'nvim-tree/nvim-web-devicons',
+            },
+            config = [[require('config.nvim-tree')]]
+        }
+
+        -- Status line
+        use {
+            'nvim-lualine/lualine.nvim',
+            requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+            config = [[require('config.lualine')]]
+        }
+
+        -- Treesitter-intergration
+        use {
+            'nvim-treesitter/nvim-treesitter',
+            run = function()
+                local ts_update = require('nvim-treesitter.install').update({ with_sync = true})
+                ts_update()
+            end,
+            config = [[require('nvim-treesitter')]]
+        }
+
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
         if packer_bootstrap then
