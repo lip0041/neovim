@@ -88,6 +88,14 @@ return require('packer').startup(function(use)
             config = [[require('nvim-treesitter')]]
         }
 
+        -- Autopairs: [], (), "", '', etc
+        -- it relies on nvim-cmp
+        use({
+            "windwp/nvim-autopairs",
+            after = "nvim-cmp",
+            config = [[require('config.nvim-autopairs')]],
+        })
+
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
         if packer_bootstrap then
